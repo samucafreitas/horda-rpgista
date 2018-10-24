@@ -1,0 +1,157 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.name.valid && (form.controls.name.dirty || form.controls.name.touched)" color="danger">
+      <div [hidden]="!form.controls.name.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label stacked>Ancestralidade</ion-label>
+      <ion-input type="ancestralidade" formControlName="ancestralidade"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.ancestralidade.valid && (form.controls.ancestralidade.dirty || form.controls.ancestralidade.touched)" color="danger">
+      <div [hidden]="!form.controls.ancestralidade.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Trilha Aprendiz</ion-label>
+      <ion-input type="text" formControlName="trilha_aprendiz"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.trilha_aprendiz.valid && (form.controls.trilha_aprendiz.dirty || form.controls.trilha_aprendiz.touched)" color="danger">
+      <div [hidden]="!form.controls.trilha_aprendiz.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <!-- AQUI MORRE TODOS!-->
+    <ion-item>
+      <ion-label stacked>Trilha Especialista</ion-label>
+      <ion-input type="text" formControlName="trilha_especialista"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.trilha_especialista.valid && (form.controls.trilha_especialista.dirty || form.controls.trilha_especialista.touched)" color="danger">
+      <div [hidden]="!form.controls.trilha_especialista.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Trilha Mestre</ion-label>
+      <ion-input type="text" formControlName="trilha_mestre"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.trilha_mestre.valid && (form.controls.trilha_mestre.dirty || form.controls.trilha_mestre.touched)" color="danger">
+      <div [hidden]="!form.controls.trilha_mestre.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Insanidade</ion-label>
+      <ion-input type="text" formControlName="insanidade"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.insanidade.valid && (form.controls.insanidade.dirty || form.controls.insanidade.touched)" color="danger">
+      <div [hidden]="!form.controls.insanidade.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Corrupção</ion-label>
+      <ion-input type="text" formControlName="corrupcao"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.corrupcao.valid && (form.controls.corrupcao.dirty || form.controls.corrupcao.touched)" color="danger">
+      <div [hidden]="!form.controls.corrupcao.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Poder</ion-label>
+      <ion-input type="text" formControlName="poder"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.poder.valid && (form.controls.poder.dirty || form.controls.poder.touched)" color="danger">
+      <div [hidden]="!form.controls.poder.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nível</ion-label>
+      <ion-input type="text" formControlName="nivel"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.nivel.valid && (form.controls.nivel.dirty || form.controls.nivel.touched)" color="danger">
+      <div [hidden]="!form.controls.nivel.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Força</ion-label>
+      <ion-input type="text" formControlName="forca"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.forca.valid && (form.controls.forca.dirty || form.controls.forca.touched)" color="danger">
+      <div [hidden]="!form.controls.forca.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Intelecto</ion-label>
+      <ion-input type="text" formControlName="intelecto"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.intelecto.valid && (form.controls.intelecto.dirty || form.controls.intelecto.touched)" color="danger">
+      <div [hidden]="!form.controls.intelecto.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Agilidade</ion-label>
+      <ion-input type="text" formControlName="agilidade"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.agilidade.valid && (form.controls.agilidade.dirty || form.controls.agilidade.touched)" color="danger">
+      <div [hidden]="!form.controls.agilidade.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Vontade</ion-label>
+      <ion-input type="text" formControlName="vontade"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.vontade.valid && (form.controls.vontade.dirty || form.controls.vontade.touched)" color="danger">
+      <div [hidden]="!form.controls.vontade.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Percepcao</ion-label>
+      <ion-input type="text" formControlName="percepcao"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.percepcao.valid && (form.controls.percepcao.dirty || form.controls.percepcao.touched)" color="danger">
+      <div [hidden]="!form.controls.percepcao.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+ 
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Salvar</button>
+    </div>
+  </form>
+</ion-content>

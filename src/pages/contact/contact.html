@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contato
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card-content>
+    <p>Olá nobre andarilho, gostou do nosso aplicativo? Quer entrar em contato conosco para nos ajudar
+        no desenvolvimento, ou relatar um bug, ou até mesmo um feedback? Entre em contato pelo nosso email adsumusdeveloper@gmail.com ou adsumusdeveloperapp@gmail.com
+         ou entre em contato pelo nosso whatsapp (62)98116-7244, agradecemos desde já a sua colaboração para nosso desenvolvimento.
+     </p>
+    </ion-card-content>
+    <ion-card-content>
+        <p>No botão abaixo você pode abrir nossas redes sociais.
+         </p>
+        </ion-card-content>
+  <ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon name="md-share"></ion-icon></button>
+    <ion-fab-list side="left">
+
+
+      <button ion-fab (click)="openFace()"><ion-icon name="logo-facebook" ></ion-icon></button>
+      <button ion-fab (click)="openTwitter()"><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab (click)="openYT()"><ion-icon name="logo-youtube"></ion-icon></button>
+      <button ion-fab (click)="openDisc()"><img src="assets/imgs/discordicone.png"></button>
+      <button ion-fab (click)="openInsta()"><ion-icon name="logo-instagram"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

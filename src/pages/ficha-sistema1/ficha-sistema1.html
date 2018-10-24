@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Fichas do Sistema
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+ 
+  <ion-list>
+    <ion-card-content>
+        <p>Para abrir click sobre a ficha, para editar ou excluir, arraste para o lado esquerdo, e para criar clique no símbolo de "+" na parte inferior.</p>
+    </ion-card-content>
+      
+    <ion-item-sliding *ngFor="let ficha of fichas | async">
+      <ion-item (click)="itemClick(ficha)">
+
+        <p>Personagem:</p>
+        <h1 style="font-weight: bold; font-size: 15px; color: black;">{{ ficha.name }}</h1>      
+        
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="editFicha(ficha)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="removeFicha(ficha.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+ 
+  <ion-fab bottom right>
+    <button ion-fab color="primary" (click)="newFicha()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+<!--
+  <ion-card>
+
+    <button ion-button block (click)="abrirDetalhes1()">Detalhes do Sistema</button>
+  </ion-card>
+-->
+</ion-content>
