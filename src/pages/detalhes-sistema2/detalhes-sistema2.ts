@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the DetalhesSistema2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FichaSistema2Page } from '../ficha-sistema2/ficha-sistema2';
 
 @IonicPage()
 @Component({
@@ -20,6 +14,9 @@ export class DetalhesSistema2Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetalhesSistema2Page');
+  }
+  criarFicha2(){
+    this.navCtrl.push(FichaSistema2Page);
   }
 
 }

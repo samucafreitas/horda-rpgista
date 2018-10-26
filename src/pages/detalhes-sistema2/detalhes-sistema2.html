@@ -1,18 +1,70 @@
 <!--
-  Generated template for the DetalhesSistema2Page page.
+  Generated template for the DetalhesSistema1Page page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>detalhes-sistema2</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    <ion-navbar>
+      <ion-title>Detalhes do Sistema</ion-title>
+    </ion-navbar>
 
 
-<ion-content padding>
+  </ion-header>
 
-</ion-content>
+  <ion-content padding>
+    <ion-card>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-avatar>
+        <h2>Dungeons & Dragons Edição 5</h2>
+        <p>26 de Outubro de 2018</p>
+      </ion-item>
+
+      <img src="assets/imgs/ded.jpg">
+
+      <ion-card-content>
+        <p>Dungeons & Dragons é um jogo bem estruturado, no qual, cada jogador controla,
+           tipicamente, um único personagem. Durante o curso do jogo, cada jogador dirige
+            as ações de seu personagem e suas interações com outros personagens.
+            Uma partida geralmente dura varias sessões, que são chamadas de aventuras.
+             Um conjunto de aventuras relacionadas entre si é chamada de campanha.
+
+            Os resultados das escolhas do grupo e a história básica do jogo é
+            determinada pelo Mestre de acordo com as regras e com a interpretação
+            do mestre dessas regras. O Mestre escolhe e descreve os vários Personagens do Mestre
+             (PDMs), que os personagens encontram, o cenário em que essas relações ocorrem,
+             e os resultados desses encontros baseados nas escolhas e ações dos jogadores.
+             As extensas regras do jogo, que cobrem áreas diversas como interações sociais,
+             uso de magia, combate e o efeito do ambiente nos personagens, ajudam o mestre em
+             suas decisões. O Mestre do Jogo pode escolher quais regras publicadas ele vai usar
+             e até mesmo criar regras novas, se achar necessário.
+
+            Desde o AD&D, Dungeons & Dragons tem suas regras básicas divididas em três livros.
+            Estes são o Livro do Jogador, o Livro do Mestre, e o Livro dos Monstros.
+
+            Os únicos materiais necessários para jogar são os livros de regras, uma ficha de
+            personagem para cada jogador e alguns dados poliédricos. A quarta edição assume o
+            uso de miniaturas ou marcadores sobre uma superfície quadriculada, itens que eram
+            opcionais nas edições passadas, e voltou a ser opcional na quinta edição.
+            Muitos outros itens estão disponíveis para melhorar o jogo, alguns dos mais populares,
+            embora opcionais sejam livros de expansão de regras, aventuras prontas e cenários de campanha.</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+        </ion-col>
+      </ion-row>
+      <button ion-button block (click)="criarFicha2()">Criar ficha do Sistema</button>
+    </ion-card>
+
+  </ion-content>

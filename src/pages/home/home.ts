@@ -1,3 +1,5 @@
+import { FichaSistema2Page } from './../ficha-sistema2/ficha-sistema2';
+import { DetalhesSistema2Page } from './../detalhes-sistema2/detalhes-sistema2';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DetalhesSistema1Page } from '../detalhes-sistema1/detalhes-sistema1';
@@ -28,6 +30,12 @@ export class HomePage {
   }
   criarFicha1(){
     this.navCtrl.push(FichaSistema1Page);
+  }
+  abrirDetalhes2(){
+    this.navCtrl.push(DetalhesSistema2Page);
+  }
+  criarFicha2(){
+    this.navCtrl.push(FichaSistema2Page);
   }
 
   gotoTabsPage(){

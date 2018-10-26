@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FichaSistema2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { FichaProvider } from './../../providers/ficha/ficha';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable'
+import 'rxjs/add/operator/map';
 
 @IonicPage()
 @Component({
@@ -14,10 +11,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'ficha-sistema2.html',
 })
 export class FichaSistema2Page {
+  fichas: Observable<any>;
+  userId: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private provider: FichaProvider, private toast: ToastController, private afAuth: AngularFireAuth) {
+    this.afAuth.authState.subscribe(user => {
+      if (user) this.userId = user.uid;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.fichas = this.provider.getAll(this.userId);
+    });
   }
 
+  itemClick(ficha: any) {
+    this.navCtrl.push('FichaPage', { ficha: ficha });
+  }
+
+  newFicha() {
+    this.navCtrl.push('FichaEditPage');
+  }
+
+  editFicha(ficha: any) {
+    this.navCtrl.push('FichaEditPage', { ficha: ficha });
+  }
+
+  removeFicha(key: string) {
+    if (key) {
+      this.provider.remove(key, this.userId)
+        .then(() => {
+          this.toast.create({ message: 'Ficha removida sucesso.', duration: 3000 }).present();
+        })
+        .catch(() => {
+          this.toast.create({ message: 'Erro ao remover a ficha.', duration: 3000 }).present();
+        });
+    }
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FichaSistema2Page');
   }

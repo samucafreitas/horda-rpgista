@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="br.com.HordaRPGista" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.HordaRPGista" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Horda-RPGista</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="adsumusdeveloper@gmail.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <description>Aplicativo oficial Horda RPGista.</description>
+    <author email="adsumusdeveloper@gmail.com" href="http://ionicframework.com/">Horda RPGista Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -88,8 +88,8 @@
         <variable name="APP_ID" value="1109603452538151" />
         <variable name="APP_NAME" value="Horda RPGista" />
     </plugin>
-    <engine name="android" spec="6.4.0" />
     <plugin name="cordova-plugin-admob-free" spec="0.21.0">
         <variable name="ADMOB_APP_ID" value="&lt;ca-app-pub-4850396541636434~3256178644&gt;" />
     </plugin>
+    <engine name="android" spec="6.4.0" />
 </widget>
