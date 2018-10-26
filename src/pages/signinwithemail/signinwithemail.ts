@@ -5,6 +5,7 @@ import { User } from '../../providers/auth/user';
 import { AuthService } from '../../providers/auth/auth-service';
 import { ResetpasswordPage } from '../resetpassword/resetpassword';
 import { HomePage } from '../home/home';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -37,10 +38,11 @@ export class SigninWithEmailPage {
 
   signIn() {
     if (this.form.form.valid) {
-   
       this.authService.signIn(this.user)
         .then(() => {
-          this.navCtrl.setRoot(HomePage);
+          const muser = firebase.auth().currentUser;
+          muser.updateProfile({ displayName: this.user.displayname, photoURL: ''});
+          this.navCtrl.push(HomePage);
         })
         .catch((error: any) => {
           let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });

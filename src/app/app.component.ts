@@ -1,11 +1,10 @@
+import { TabsPage } from './../pages/tabs/tabs';
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, TabButton } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SigninPage } from '../pages/signin/signin';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { WelcomePage } from '../pages/welcome/welcome';
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -14,10 +13,11 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, afAuth: AngularFireAuth) {
     afAuth.authState.subscribe(user => {
-      if (user) {
-        this.rootPage = WelcomePage;
-      } else {
+      if (!user) {
         this.rootPage = SigninPage;
+      }
+      else {
+        this.rootPage = TabsPage;
       }
     });
 
@@ -28,4 +28,5 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
 }

@@ -22,6 +22,8 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/admob-free": "^4.16.0",
+    "@ionic-native/admob-pro": "^4.16.0",
     "@ionic-native/core": "~4.11.0",
     "@ionic-native/facebook": "^4.12.2",
     "@ionic-native/google-plus": "^4.12.2",
@@ -31,14 +33,18 @@
     "@ionic/storage": "2.1.3",
     "angularfire2": "^5.0.0-rc.12",
     "cordova": "^8.0.0",
+    "cordova-admob-sdk": "0.20.1",
     "cordova-android": "6.4.0",
+    "cordova-plugin-admob-free": "0.21.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-facebook4": "^2.5.0",
-    "cordova-plugin-googleplus": "^5.3.1",
-    "cordova-plugin-ionic-keyboard": "^2.1.2",
-    "cordova-plugin-ionic-webview": "^2.1.4",
+    "cordova-plugin-googleplus": "^5.3.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^2.2.0",
+    "cordova-plugin-multidex": "^0.1.4",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-promise-polyfill": "0.0.2",
     "dice-typescript": "^1.6.0",
     "enhanced-resolve": "^3.3.0",
     "firebase": "^5.4.2",
@@ -59,7 +65,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "myreversedclientid"
+        "REVERSED_CLIENT_ID": "myreversedclientid",
+        "PLAY_SERVICES_VERSION": "11.8.0"
       },
       "cordova-plugin-facebook4": {
         "APP_ID": "1109603452538151",
@@ -73,7 +80,10 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-admob-free": {
+        "ADMOB_APP_ID": "<ca-app-pub-4850396541636434~3256178644>"
+      }
     },
     "platforms": [
       "android"

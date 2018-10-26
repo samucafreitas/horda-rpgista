@@ -87,7 +87,9 @@
     <plugin name="cordova-plugin-facebook4" spec="^2.4.0">
         <variable name="APP_ID" value="1109603452538151" />
         <variable name="APP_NAME" value="Horda RPGista" />
-        <variable name="ANDROID_SDK_VERSION" value="4.+" />
     </plugin>
     <engine name="android" spec="6.4.0" />
+    <plugin name="cordova-plugin-admob-free" spec="0.21.0">
+        <variable name="ADMOB_APP_ID" value="&lt;ca-app-pub-4850396541636434~3256178644&gt;" />
+    </plugin>
 </widget>

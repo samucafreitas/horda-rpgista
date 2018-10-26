@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DetalhesSistema1Page } from '../detalhes-sistema1/detalhes-sistema1';
 import { FichaSistema1Page } from '../ficha-sistema1/ficha-sistema1';
-
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the HomePage page.
  *
@@ -30,5 +30,8 @@ export class HomePage {
     this.navCtrl.push(FichaSistema1Page);
   }
 
+  gotoTabsPage(){
+    this.navCtrl.push(TabsPage)
+  }
 
 }
