@@ -4,6 +4,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { AdMobFree } from '@ionic-native/admob-free';
 
 
 import { AboutPage } from '../pages/about/about';
@@ -94,7 +95,9 @@ import { ChatProvider } from '../providers/chat/chat';
     GooglePlus,
     Facebook,
     TwitterConnect,
-    ChatProvider
+    ChatProvider,
+    AdMobFree,
+        { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}
