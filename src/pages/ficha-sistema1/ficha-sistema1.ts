@@ -4,7 +4,6 @@ import { FichaProvider } from './../../providers/ficha/ficha';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
-import { Subscription } from 'rxjs';
 
 @IonicPage()
 @Component({
