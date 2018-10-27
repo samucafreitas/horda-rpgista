@@ -5,7 +5,6 @@ import { User } from '../../providers/auth/user';
 import { AuthService } from '../../providers/auth/auth-service';
 import { SignupPage } from '../signup/signup';
 import { ResetpasswordPage } from '../resetpassword/resetpassword';
-import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()

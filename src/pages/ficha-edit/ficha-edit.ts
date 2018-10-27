@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Subscription } from 'rxjs';
 
 @IonicPage()
 @Component({
@@ -16,32 +17,23 @@ export class FichaEditPage {
   form: FormGroup;
   ficha: any;
   userId: string;
+  afSubs: Subscription;
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
     private formBuilder: FormBuilder, private provider: FichaProvider,
     private toast: ToastController, private afAuth: AngularFireAuth) {
- 
-    // maneira 1
+
     this.ficha = this.navParams.data.ficha || { };
     this.createForm();
- 
-    // // maneira 2
-    // this.contact = { };
-    // this.createForm();
- 
-    // if (this.navParams.data.key) {
-    //   const subscribe = this.provider.get(this.navParams.data.key).subscribe((c: any) => {
-    //     subscribe.unsubscribe();
- 
-    //     this.contact = c;
-    //     this.createForm();
-    //   })
-    // }
- 
+
     this.setupPageTitle();
   }
- 
+
+  ngOnDestroy(){
+    if (this.afSubs) this.afSubs.unsubscribe();
+  }
+
   private setupPageTitle() {
     this.title = this.navParams.data.ficha ? 'Alterando ficha' : 'Nova Ficha';
   }
@@ -70,7 +62,7 @@ export class FichaEditPage {
   onSubmit() {
     const taxaDeCura = this.form.value.forca / 3;
     this.form.value.modificador = Math.floor(taxaDeCura);
-    this.afAuth.authState.subscribe(user => {
+    this.afSubs = this.afAuth.authState.subscribe(user => {
       if (user) this.userId = user.uid;
       if (this.form.valid) {
         this.provider.save(this.form.value, this.userId)
@@ -84,7 +76,6 @@ export class FichaEditPage {
           })
       }
     });
-   
   }
 
   ionViewDidLoad() {

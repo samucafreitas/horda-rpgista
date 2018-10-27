@@ -4,6 +4,7 @@ import { FichaProvider } from './../../providers/ficha/ficha';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
+import { Subscription } from 'rxjs';
 
 @IonicPage()
 @Component({
@@ -14,11 +15,12 @@ export class FichaSistema1Page {
   fichas: Observable<any>;
   userId: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private provider: FichaProvider, private toast: ToastController, private afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe(user => {
+   this.afAuth.authState.subscribe(user => {
       if (user) this.userId = user.uid;
 
       this.fichas = this.provider.getAll(this.userId);
     });
+    
   }
 
   itemClick(ficha: any) {
