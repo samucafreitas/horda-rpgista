@@ -20,6 +20,7 @@ import { TabsPage } from '../tabs/tabs';
 export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
@@ -37,9 +38,4 @@ export class HomePage {
   criarFicha2(){
     this.navCtrl.push(FichaSistema2Page);
   }
-
-  gotoTabsPage(){
-    this.navCtrl.push(TabsPage)
-  }
-
 }

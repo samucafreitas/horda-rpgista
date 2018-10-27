@@ -4,8 +4,9 @@ import { NgForm } from '@angular/forms';
 import { User } from '../../providers/auth/user';
 import { AuthService } from '../../providers/auth/auth-service';
 import { SignupPage } from '../signup/signup';
-import { SigninWithEmailPage } from '../signinwithemail/signinwithemail';
-import { WelcomePage } from '../welcome/welcome';
+import { ResetpasswordPage } from '../resetpassword/resetpassword';
+import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -25,31 +26,31 @@ export class SigninPage {
   createAccount() {
     this.navCtrl.push(SignupPage);
   }
-
-  signInWithEmailPage() {
-    this.navCtrl.push(SigninWithEmailPage);
+  
+  resetPassword() {
+    this.navCtrl.push(ResetpasswordPage);
   }
 
-  signInWithGoogle() {
-    this.authService.signInWithGoogle()
-      .then(() => {
-        this.navCtrl.setRoot(WelcomePage);
-      })
-      .catch((error) => {
-        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
-          .present();
-      });
-  }
-
-  signInWithFacebook() {
-    this.authService.signInWithFacebook()
-      .then(() => {
-        this.navCtrl.setRoot(WelcomePage);
-      })
-      .catch((error) => {
-        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
-          .present();
-      });
+  signIn() {
+    if (this.form.form.valid) {
+      this.authService.signIn(this.user)
+        .then(() => {
+          this.navCtrl.push(TabsPage);
+        })
+        .catch((error: any) => {
+          let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
+          if (error.code == 'auth/invalid-email') {
+            toast.setMessage('O e-mail digitado não é valido.');
+          } else if (error.code == 'auth/user-disabled') {
+            toast.setMessage('O usuário está desativado.');
+          } else if (error.code == 'auth/user-not-found') {
+            toast.setMessage('O usuário não foi encontrado.');
+          } else if (error.code == 'auth/wrong-password') {
+            toast.setMessage('A senha digitada não é valida.');
+          }
+          toast.present();
+        });
+    }
   }
 
   /*signInWithTwitter() {
@@ -61,5 +62,4 @@ export class SigninPage {
         this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
           .present();
       });*/
-  }
-
+}

@@ -3,7 +3,6 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { User } from '../../providers/auth/user';
 import { AuthService } from '../../providers/auth/auth-service';
-import { WelcomePage } from '../welcome/welcome';
 import * as firebase from 'firebase';
 
 @IonicPage()
@@ -25,13 +24,10 @@ export class SignupPage {
     if (this.form.form.valid) {
       let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
       this.authService.createUser(this.user)
-        .then((user: any) => {
-          toast.setMessage('Usuário criado com sucesso.');
+        .then(() => {
           const muser = firebase.auth().currentUser;
           muser.updateProfile({ displayName: this.user.displayname, photoURL: ''});
-          this.navCtrl.setRoot(WelcomePage);
-          user.sendEmailVerification();
-          toast.present();
+          muser.sendEmailVerification();
         })
         .catch((error: any) => {
           if (error.code  == 'auth/email-already-in-use') {

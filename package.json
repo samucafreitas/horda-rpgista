@@ -22,6 +22,7 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/admob": "^3.14.0",
     "@ionic-native/admob-free": "^4.16.0",
     "@ionic-native/admob-pro": "^4.16.0",
     "@ionic-native/core": "~4.11.0",
