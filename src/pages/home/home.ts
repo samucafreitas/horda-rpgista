@@ -1,7 +1,7 @@
 import { FichaSistema2Page } from './../ficha-sistema2/ficha-sistema2';
 import { DetalhesSistema2Page } from './../detalhes-sistema2/detalhes-sistema2';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { DetalhesSistema1Page } from '../detalhes-sistema1/detalhes-sistema1';
 import { FichaSistema1Page } from '../ficha-sistema1/ficha-sistema1';
 /**
@@ -11,16 +11,13 @@ import { FichaSistema1Page } from '../ficha-sistema1/ficha-sistema1';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');

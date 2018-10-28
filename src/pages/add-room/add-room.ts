@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
 
-@IonicPage()
 @Component({
   selector: 'page-add-room',
   templateUrl: 'add-room.html',

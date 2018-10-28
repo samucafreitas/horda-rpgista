@@ -4,7 +4,6 @@ import { NavController, NavParams, Content } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { Dice } from "dice-typescript";
 
-
 @Component({
   selector: 'page-rooms',
   templateUrl: 'rooms.html'

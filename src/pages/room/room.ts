@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AddRoomPage } from '../add-room/add-room';
 import * as firebase from 'firebase';
 import { RoomsPage } from '../rooms/rooms';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-@IonicPage()
 @Component({
   selector: 'page-room',
   templateUrl: 'room.html',

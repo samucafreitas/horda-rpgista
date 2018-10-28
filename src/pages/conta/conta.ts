@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { SigninPage } from '../signin/signin';
 import { AuthService } from '../../providers/auth/auth-service';
 import { AdMobFree, AdMobFreeRewardVideoConfig } from '@ionic-native/admob-free';
 import { Platform } from 'ionic-angular';
-@IonicPage()
+
 @Component({
   selector: 'page-conta',
   templateUrl: 'conta.html',
