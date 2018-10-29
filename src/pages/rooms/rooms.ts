@@ -25,6 +25,7 @@ export class RoomsPage {
     this.data.type = 'message';
     this.data.nickname = this.nickname;
 
+
     let joinData = firebase.database().ref('chatrooms/'+this.roomkey+'/chats').push();
     joinData.set({
       type:'join',
@@ -32,7 +33,7 @@ export class RoomsPage {
       message:this.nickname+' entrou na sala.',
       sendDate:Date()
     });
-    
+
     this.data.message = '';
     firebase.database().ref('chatrooms/'+this.roomkey+'/chats').on('value', resp => {
       this.chats = [];
@@ -54,14 +55,14 @@ export class RoomsPage {
       sendDate:Date()
     });
 
-    if (this.data.message.startsWith("\\")) {
+    if (this.data.message.startsWith("\/")) {
       const dice = new Dice();
       const result = dice.roll(this.data.message.substr(1,));
 
       let bot = firebase.database().ref('chatrooms/'+this.roomkey+'/chats').push();
       bot.set({
         type:this.data.type,
-        user:"BOT",
+        user:"Dado Bot",
         message: result.total + ' <- ' + result.renderedExpression,
         sendDate:Date()
       });
